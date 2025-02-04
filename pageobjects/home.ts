@@ -1,16 +1,16 @@
 import BasePage from './base';
 
 class HomePage extends BasePage {
+  public I = actor();
 
   private mostPopularLabel = '#trending-articles-heading';
   private mostPopularPosts = '.trending-articles__list li';
   private whiteSpaceArea = '.bypass-block-links-container';
-  private bypassBlockMenu = '.screen-reader-text';
   private skipToMostRead = 'a[href="#most-read-container"]';
   private mostReadSection = '#most-read-container';
 
   async openHomePage() {
-    await super.open("/");
+    this.I.amOnPage("/");
   }
 
   async verifyMostPopularSectionVisible() {
@@ -27,18 +27,8 @@ class HomePage extends BasePage {
     }, this.whiteSpaceArea);
   }
 
-  async pressTabKeyUntilVisible() {
-    const maxRetries = 20; 
-    let retries = 0;
-  
-    while (!(await this.I.grabNumberOfVisibleElements(this.bypassBlockMenu))) {
+  async pressTabToSeeByPassMenu() {
       this.I.pressKey('Tab'); 
-      retries++;
-  
-      if (retries >= maxRetries) {
-        throw new Error('Bypass block menu did not become visible after pressing Tab key.');
-      }
-    }
   }
 
   async selectSkipToMostRead() {

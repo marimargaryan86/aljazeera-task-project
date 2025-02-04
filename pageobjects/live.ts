@@ -3,11 +3,13 @@ import BasePage from './base';
 
 class LivePage extends BasePage  {
 
+  public I = actor();
+
   private livePlayerSelector = '.vjs-tech'; 
   private switchPlayer = "#liveStreamPlayerHelpButton";
 
   async openLivePage() {
-    await super.open('/live'); 
+   this.I.amOnPage('/live');
   }
 
   async verifyPlayerIsVisible() {

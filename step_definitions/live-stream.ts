@@ -1,4 +1,4 @@
-const { I } = inject();
+
 import LivePage from '../pageobjects/live';
 
 Given('I am on the live page', async () => {

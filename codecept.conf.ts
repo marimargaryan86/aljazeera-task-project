@@ -22,7 +22,7 @@ exports.config = {
   hooks: [],
   gherkin: {
     features: './features/*.feature',
-    steps: ['./step_definitions/most-popular.ts', './step_definitions/live-stream.ts']
+    steps: ['./step_definitions/most-popular.ts', './step_definitions/live-stream.ts', './step_definitions/common.ts']
   },
   plugins: {
     screenshotOnFail: {

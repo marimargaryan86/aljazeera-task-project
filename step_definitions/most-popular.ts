@@ -1,4 +1,4 @@
-const { I } = inject();
+
 import HomePage from '../pageobjects/home';
 
 Given('I am on the homepage', async () => {
@@ -17,8 +17,8 @@ When('I click on the whitespace near the logo', async () => {
   await HomePage.clickWhiteSpaceNearLogo();
 });
 
-When('I press the TAB key until "Skip to Most Read" is visible', async () => {
-  await HomePage.pressTabKeyUntilVisible();
+When('I press the TAB key', async () => {
+  await HomePage.pressTabToSeeByPassMenu();
 });
 
 When('I click the "Skip to Most Read" option', async () => {
