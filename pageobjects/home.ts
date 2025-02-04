@@ -17,7 +17,6 @@ class HomePage extends BasePage {
     this.I.seeElement(this.mostPopularLabel);
   }
   async verifyMostPopularPostsCount(expectedCount:number) {
-    this.I.waitForElement(this.mostPopularPosts, 10);
     this.I.seeNumberOfVisibleElements(this.mostPopularPosts, expectedCount);
   }
   

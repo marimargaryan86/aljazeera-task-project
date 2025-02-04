@@ -13,12 +13,10 @@ class LivePage extends BasePage  {
   }
 
   async verifyPlayerIsVisible() {
-    this.I.waitForVisible(this.livePlayerSelector, 10); 
     this.I.seeElement(this.livePlayerSelector); 
   }
 
   async verifySwitchPlayerBtnIsVisible() {
-    this.I.waitForVisible(this.switchPlayer, 10); 
     this.I.seeElement(this.switchPlayer); 
   }
 

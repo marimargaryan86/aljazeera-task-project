@@ -6,13 +6,9 @@ class BasePage {
   private acceptCookiesButton = '#onetrust-accept-btn-handler';
 
   async acceptCookies() {
-      this.I.waitForElement(this.acceptCookiesButton, 5);
       this.I.click(this.acceptCookiesButton);
-      this.I.wait(1); 
-  }
-  
-  async open(url: string) {
-    this.I.amOnPage(url); 
+      this.I.dontSeeElement(this.acceptCookiesButton);
+
   }
   
 }
